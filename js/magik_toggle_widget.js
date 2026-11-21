@@ -27,8 +27,10 @@ const MagikToggleExtension = {
                 this.properties.on_text = this.properties.on_text || "ON";
                 this.properties.off_text = this.properties.off_text || "OFF";
 
-                // Set an initial size
-                this.size = this.size || [1500, 1000];
+                // Set an initial size (assign directly: the LiteGraph
+                // constructor pre-sets a default size, so `||` would never
+                // apply; saved workflows restore their size via onConfigure)
+                this.size = [1500, 1000];
 
                 // --- UI Construction ---
                 const wrapper = document.createElement("div");
