@@ -30,7 +30,7 @@ const MagikToggleExtension = {
                 // Set an initial size (assign directly: the LiteGraph
                 // constructor pre-sets a default size, so `||` would never
                 // apply; saved workflows restore their size via onConfigure)
-                this.size = [1500, 1000];
+                this.size = [750, 500];
 
                 // --- UI Construction ---
                 const wrapper = document.createElement("div");

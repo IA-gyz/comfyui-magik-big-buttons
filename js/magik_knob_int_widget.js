@@ -90,7 +90,7 @@ const MagikKnobIntExtension = {
             // Assign directly: the LiteGraph constructor pre-sets a default
             // size, so `this.size || ...` would never apply. Saved workflows
             // still restore their own size later via onConfigure.
-            this.size = [1750, 2000];
+            this.size = [875, 1000];
         };
 
         nodeType.prototype._loadCSS = function () {
