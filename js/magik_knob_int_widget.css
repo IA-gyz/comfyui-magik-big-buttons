@@ -53,6 +53,28 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+/* MIN/MAX controls in the main panel (top-left corner of the header) */
+.magik-knob-int-minmax {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    pointer-events: auto;
+}
+.magik-knob-int-minmax label {
+    color: var(--knob-color, #0fff00);
+    font-family: 'Orbitron', monospace;
+    font-weight: bold;
+    text-shadow: 0 0 8px var(--knob-color, #0fff00);
+}
+.magik-knob-int-minmax input {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--knob-color, #0fff00);
+    color: #fff;
+    border-radius: 6px;
+    padding: 4px 6px;
+    font-family: 'Orbitron', monospace;
+    color-scheme: dark;
+}
 /* Corner buttons (shared) */
 .magik-knob-int-corner-btn {
     position: absolute;

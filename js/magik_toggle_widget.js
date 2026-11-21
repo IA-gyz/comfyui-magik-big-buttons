@@ -10,8 +10,8 @@ const MagikToggleExtension = {
             nodeType.prototype.onNodeCreated = function () {
                 onNodeCreated?.apply(this, arguments);
 
-                // Make node background and title transparent
-                this.bgcolor = "transparent";
+                // Purple node background, transparent title
+                this.bgcolor = "purple";
                 this.color = "transparent";
 
                 // Find the original boolean widget
@@ -28,7 +28,7 @@ const MagikToggleExtension = {
                 this.properties.off_text = this.properties.off_text || "OFF";
 
                 // Set an initial size
-                this.size = this.size || [300, 200];
+                this.size = this.size || [1500, 1000];
 
                 // --- UI Construction ---
                 const wrapper = document.createElement("div");

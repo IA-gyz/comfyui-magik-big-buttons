@@ -62,7 +62,7 @@ const MagikKnobIntExtension = {
 
         // ----- Helper methods -----
         nodeType.prototype._initProperties = function () {
-            this.bgcolor = "transparent";
+            this.bgcolor = "purple";
             this.title = "";
 
             // Find the widget by its new name "knobValue"
@@ -87,7 +87,7 @@ const MagikKnobIntExtension = {
             this.properties.stepper = this.properties.stepper ?? 1;
             this.properties.precision = 0;
 
-            this.size = this.size || [350, 400];
+            this.size = this.size || [1750, 2000];
         };
 
         nodeType.prototype._loadCSS = function () {
@@ -126,6 +126,30 @@ const MagikKnobIntExtension = {
             settingsBtn.className = "magik-knob-int-btn";
             settingsBtn.innerHTML = "⚙";
             header.appendChild(settingsBtn);
+
+            // MIN/MAX controls in the main panel (top-left corner)
+            const minMaxContainer = document.createElement("div");
+            minMaxContainer.className = "magik-knob-int-minmax";
+
+            const minLabel = document.createElement("label");
+            minLabel.textContent = "MIN";
+            const minInput = document.createElement("input");
+            minInput.type = "number";
+            minInput.step = "1";
+            minInput.value = this.properties.min;
+
+            const maxLabel = document.createElement("label");
+            maxLabel.textContent = "MAX";
+            const maxInput = document.createElement("input");
+            maxInput.type = "number";
+            maxInput.step = "1";
+            maxInput.value = this.properties.max;
+
+            minMaxContainer.appendChild(minLabel);
+            minMaxContainer.appendChild(minInput);
+            minMaxContainer.appendChild(maxLabel);
+            minMaxContainer.appendChild(maxInput);
+            header.insertBefore(minMaxContainer, titleDisplay);
 
             wrapper.appendChild(header);
 
@@ -193,6 +217,9 @@ const MagikKnobIntExtension = {
             this.wrapper = wrapper;
             this.titleDisplay = titleDisplay;
             this.settingsBtn = settingsBtn;
+            this.minMaxContainer = minMaxContainer;
+            this.minInput = minInput;
+            this.maxInput = maxInput;
             this.minusBtn = minusBtn;
             this.plusBtn = plusBtn;
             this.knobBody = knobBody;
@@ -388,6 +415,23 @@ const MagikKnobIntExtension = {
                 }
             });
 
+            // MIN/MAX inputs (main panel)
+            const applyMinMax = () => {
+                let min = parseInt(this.minInput.value, 10);
+                let max = parseInt(this.maxInput.value, 10);
+                if (isNaN(min)) { min = this.properties.min; this.minInput.value = min; }
+                if (isNaN(max)) { max = this.properties.max; this.maxInput.value = max; }
+                if (max < min) { max = min; this.maxInput.value = max; }
+                this.properties.min = min;
+                this.properties.max = max;
+                this._updateAllVisuals();
+            };
+            this.minInput.addEventListener("change", applyMinMax);
+            this.maxInput.addEventListener("change", applyMinMax);
+            this.minMaxContainer.addEventListener("wheel", (e) => e.stopPropagation(), { passive: false });
+            this.minMaxContainer.addEventListener("pointerdown", (e) => e.stopPropagation());
+            this.minMaxContainer.addEventListener("keydown", (e) => e.stopPropagation());
+
             // Canvas pan/zoom passthrough: let wheel (over sliders/buttons/
             // background, not the knob itself) and middle-mouse drag still
             // reach the LiteGraph canvas, same pattern as Magik Mega Panel.
@@ -443,6 +487,11 @@ const MagikKnobIntExtension = {
             this.settingsBtn.style.fontSize = (btnSize * 0.6) + 'px';
             this.titleDisplay.style.fontSize = (btnSize * 0.5) + 'px';
             this.titleDisplay.style.lineHeight = btnSize + 'px';
+            this.minMaxContainer.style.fontSize = (btnSize * 0.3) + 'px';
+            this.minMaxContainer.style.gap = (btnSize * 0.08) + 'px';
+            this.minInput.style.width = this.maxInput.style.width = (btnSize * 1.5) + 'px';
+            this.minInput.style.height = this.maxInput.style.height = (btnSize * 0.7) + 'px';
+            this.minInput.style.fontSize = this.maxInput.style.fontSize = (btnSize * 0.3) + 'px';
 
             const headerHeight = btnSize + 10;
             const availableHeight = h - headerHeight;
@@ -494,6 +543,8 @@ const MagikKnobIntExtension = {
 
         nodeType.prototype._updateAllVisuals = function () {
             this.titleDisplay.textContent = this.properties.title;
+            this.minInput.value = this.properties.min;
+            this.maxInput.value = this.properties.max;
             this.wrapper.style.setProperty("--knob-color", this.properties.color);
             // Step buttons show current stepper value
             this.minusBtn.textContent = `-${this.properties.stepper}`;
@@ -567,14 +618,6 @@ const MagikKnobIntExtension = {
             const titleInput = document.createElement("input");
             titleInput.type = "text";
 
-            const minInput = document.createElement("input");
-            minInput.type = "number";
-            minInput.step = "1";
-
-            const maxInput = document.createElement("input");
-            maxInput.type = "number";
-            maxInput.step = "1";
-
             const stepperInput = document.createElement("input");
             stepperInput.type = "number";
             stepperInput.step = "1";
@@ -618,8 +661,6 @@ const MagikKnobIntExtension = {
             });
 
             modal.appendChild(createRow("Title:", titleInput));
-            modal.appendChild(createRow("Min:", minInput));
-            modal.appendChild(createRow("Max:", maxInput));
             modal.appendChild(createRow("Step:", stepperInput));
             modal.appendChild(createRow("Color:", colorInput));
             modal.appendChild(createRow("Shape:", shapeSelect));
@@ -677,8 +718,6 @@ const MagikKnobIntExtension = {
 
             const show = () => {
                 titleInput.value = this.properties.title;
-                minInput.value = this.properties.min;
-                maxInput.value = this.properties.max;
                 stepperInput.value = this.properties.stepper;
                 colorInput.value = this.properties.color;
                 shapeSelect.value = this.shapeWidget.value;
@@ -703,8 +742,8 @@ const MagikKnobIntExtension = {
 
             saveBtn.addEventListener("click", () => {
                 let stepperVal = parseInt(stepperInput.value, 10);
-                const min = parseInt(minInput.value, 10);
-                const max = parseInt(maxInput.value, 10);
+                const min = this.properties.min;
+                const max = this.properties.max;
                 if (isNaN(stepperVal) || stepperVal < 1) stepperVal = 1;
                 const range = max - min;
                 if (stepperVal > range && range > 0) {
@@ -714,8 +753,6 @@ const MagikKnobIntExtension = {
                 stepperInput.value = stepperVal;
 
                 this.properties.title = titleInput.value;
-                this.properties.min = min;
-                this.properties.max = max;
                 this.properties.stepper = stepperVal;
                 this.properties.color = colorInput.value;
 
