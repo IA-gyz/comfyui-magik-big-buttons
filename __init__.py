@@ -2,18 +2,18 @@
 # Magik Big Buttons - ComfyUI custom nodes
 # Merged from comfyui-magik-knob and comfyui-magik-toggle
 
-from .magik_knob import MagikKnobIntNode
+from .magik_big_integer import MagikBigIntegerNode
 from .magik_toggle import MagikToggleNode
 
 # ComfyUI loads a package via either NODE_CLASS_MAPPINGS (V1) or
 # comfy_entrypoint (V3), not both, so both nodes are registered as V1.
 NODE_CLASS_MAPPINGS = {
-    "MagikKnobIntNode": MagikKnobIntNode,
+    "MagikBigIntegerNode": MagikBigIntegerNode,
     "Magik.Toggle": MagikToggleNode,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "MagikKnobIntNode": "Magik Knob Int",
+    "MagikBigIntegerNode": "Magik Big Integer",
     "Magik.Toggle": "Magik Toggle",
 }
 

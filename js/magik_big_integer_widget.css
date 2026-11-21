@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
 
 /* ----- Base Styles ----- */
-.magik-knob-int-wrapper {
+.magik-big-integer-wrapper {
     font-family: 'Orbitron', monospace;
     user-select: none;
 }
-.magik-knob-int-wrapper:focus {
-    outline: 2px solid var(--knob-color);
+.magik-big-integer-wrapper:focus {
+    outline: 2px solid var(--big-integer-color);
     outline-offset: 2px;
 }
-.magik-knob-int-wrapper [tabindex="0"]:focus {
-    outline: 2px solid var(--knob-color, #0ff);
+.magik-big-integer-wrapper [tabindex="0"]:focus {
+    outline: 2px solid var(--big-integer-color, #0ff);
     outline-offset: 2px;
 }
-.magik-knob-int-header {
+.magik-big-integer-header {
     width: 100%;
     display: flex;
     align-items: center;
@@ -22,10 +22,10 @@
     box-sizing: border-box;
     pointer-events: none;
 }
-.magik-knob-int-btn {
+.magik-big-integer-btn {
     background: rgba(255, 255, 255, 0.1);
-    color: var(--knob-color, #0fff00);
-    border: 1px solid var(--knob-color, #0fff00);
+    color: var(--big-integer-color, #0fff00);
+    border: 1px solid var(--big-integer-color, #0fff00);
     border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
@@ -35,17 +35,17 @@
     justify-content: center;
     pointer-events: auto;
 }
-.magik-knob-int-btn:hover {
-    background: var(--knob-color, #0fff00);
+.magik-big-integer-btn:hover {
+    background: var(--big-integer-color, #0fff00);
     color: white;
     transform: scale(1.1);
-    box-shadow: 0 0 15px var(--knob-color, #0fff00);
+    box-shadow: 0 0 15px var(--big-integer-color, #0fff00);
 }
-.magik-knob-int-title {
-    color: var(--knob-color, #0fff00);
+.magik-big-integer-title {
+    color: var(--big-integer-color, #0fff00);
     font-family: 'Orbitron', monospace;
     font-weight: bold;
-    text-shadow: 0 0 8px var(--knob-color, #0fff00);
+    text-shadow: 0 0 8px var(--big-integer-color, #0fff00);
     pointer-events: none;
     flex: 1;
     text-align: left;
@@ -54,7 +54,7 @@
     text-overflow: ellipsis;
 }
 /* MIN/MAX controls in the main panel (full-width strip below the header) */
-.magik-knob-int-minmax {
+.magik-big-integer-minmax {
     width: 100%;
     box-sizing: border-box;
     display: flex;
@@ -63,15 +63,15 @@
     padding: 4px 8px;
     pointer-events: auto;
 }
-.magik-knob-int-minmax label {
-    color: var(--knob-color, #0fff00);
+.magik-big-integer-minmax label {
+    color: var(--big-integer-color, #0fff00);
     font-family: 'Orbitron', monospace;
     font-weight: bold;
-    text-shadow: 0 0 8px var(--knob-color, #0fff00);
+    text-shadow: 0 0 8px var(--big-integer-color, #0fff00);
 }
-.magik-knob-int-minmax input {
+.magik-big-integer-minmax input {
     background: rgba(0, 0, 0, 0.5);
-    border: 1px solid var(--knob-color, #0fff00);
+    border: 1px solid var(--big-integer-color, #0fff00);
     color: #fff;
     border-radius: 6px;
     padding: 4px 6px;
@@ -79,32 +79,32 @@
     color-scheme: dark;
 }
 /* Corner buttons (shared) */
-.magik-knob-int-corner-btn {
+.magik-big-integer-corner-btn {
     position: absolute;
     z-index: 10;
     pointer-events: auto;
     border-radius: 50%;
-    width: calc(var(--knob-size) / 8);
-    height: calc(var(--knob-size) / 8);
-    font-size: calc(var(--knob-size) / 16);
+    width: calc(var(--big-integer-size) / 8);
+    height: calc(var(--big-integer-size) / 8);
+    font-size: calc(var(--big-integer-size) / 16);
     background: rgba(255, 255, 255, 0.15);
-    border: 1px solid var(--knob-color, #0fff00);
-    color: var(--knob-color, #0fff00);
+    border: 1px solid var(--big-integer-color, #0fff00);
+    color: var(--big-integer-color, #0fff00);
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.2s ease;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
-.magik-knob-int-corner-btn:hover {
-    background: var(--knob-color, #0fff00);
+.magik-big-integer-corner-btn:hover {
+    background: var(--big-integer-color, #0fff00);
     color: white;
     transform: scale(1.1);
-    box-shadow: 0 0 15px var(--knob-color, #0fff00);
+    box-shadow: 0 0 15px var(--big-integer-color, #0fff00);
 }
 
 /* ----- Modal Styles (with icon grid) ----- */
-.magik-knob-int-modal-overlay {
+.magik-big-integer-modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -117,9 +117,9 @@
     justify-content: center;
     backdrop-filter: blur(5px);
 }
-.magik-knob-int-modal {
+.magik-big-integer-modal {
     background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
-    border: 2px solid var(--knob-color, #0fff00);
+    border: 2px solid var(--big-integer-color, #0fff00);
     border-radius: 15px;
     padding: 25px;
     display: flex;
@@ -130,21 +130,21 @@
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
     font-family: 'Orbitron', monospace;
 }
-.magik-knob-int-modal-row {
+.magik-big-integer-modal-row {
     display: grid;
     grid-template-columns: 100px 1fr;
     align-items: center;
     gap: 15px;
 }
-.magik-knob-int-modal-row label {
+.magik-big-integer-modal-row label {
     color: rgba(255, 255, 255, 0.8);
     font-size: 12px;
     font-weight: 500;
 }
-.magik-knob-int-modal-row input,
-.magik-knob-int-modal-row select {
+.magik-big-integer-modal-row input,
+.magik-big-integer-modal-row select {
     background: rgba(0, 0, 0, 0.5);
-    border: 1px solid var(--knob-color, #0fff00);
+    border: 1px solid var(--big-integer-color, #0fff00);
     color: white;
     padding: 8px 12px;
     border-radius: 6px;
@@ -152,15 +152,15 @@
     font-family: 'Orbitron', monospace;
     transition: all 0.3s ease;
 }
-.magik-knob-int-modal-row select option {
+.magik-big-integer-modal-row select option {
     background: #2a2a2a;
     color: white;
 }
-.magik-knob-int-modal-row input:focus,
-.magik-knob-int-modal-row select:focus {
+.magik-big-integer-modal-row input:focus,
+.magik-big-integer-modal-row select:focus {
     outline: none;
     border-color: #ffffff;
-    box-shadow: 0 0 10px var(--knob-color, #0fff00);
+    box-shadow: 0 0 10px var(--big-integer-color, #0fff00);
 }
 .theme-icon-grid {
     display: grid;
@@ -188,17 +188,17 @@
     border-color: white;
     box-shadow: 0 0 20px white;
 }
-.magik-knob-int-modal-buttons {
+.magik-big-integer-modal-buttons {
     display: flex;
     justify-content: flex-end;
     gap: 10px;
     margin-top: 10px;
 }
-.magik-knob-int-modal-button {
+.magik-big-integer-modal-button {
     background: rgba(255, 255, 255, 0.1);
-    border: 1px solid var(--knob-color, #0fff00);
+    border: 1px solid var(--big-integer-color, #0fff00);
     border-radius: 6px;
-    color: var(--knob-color, #0fff00);
+    color: var(--big-integer-color, #0fff00);
     padding: 8px 16px;
     cursor: pointer;
     font-size: 12px;
@@ -207,16 +207,16 @@
     transition: all 0.3s ease;
     text-transform: uppercase;
 }
-.magik-knob-int-modal-button:hover {
-    background: var(--knob-color, #0fff00);
+.magik-big-integer-modal-button:hover {
+    background: var(--big-integer-color, #0fff00);
     color: white;
 }
-.magik-knob-int-modal-button.save {
-    background: var(--knob-color, #0fff00);
+.magik-big-integer-modal-button.save {
+    background: var(--big-integer-color, #0fff00);
     color: white;
 }
-.magik-knob-int-modal-title {
-    color: var(--knob-color, #0fff00);
+.magik-big-integer-modal-title {
+    color: var(--big-integer-color, #0fff00);
     font-size: 16px;
     font-weight: 700;
     text-align: center;
@@ -226,14 +226,14 @@
 }
 
 /* ----- Shape Containers ----- */
-.knob-container, .vertical-slider-container, .horizontal-slider-container {
+.big-integer-container, .vertical-slider-container, .horizontal-slider-container {
     display: none;
     width: 100%;
     flex: 1;
     position: relative;
     pointer-events: none;
 }
-.shape-knob .knob-container {
+.shape-big_integer .big-integer-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -252,8 +252,8 @@
     justify-content: center;
 }
 
-/* ----- Knob specific ----- */
-.knob-body {
+/* ----- BigInteger specific ----- */
+.big-integer-body {
     border-radius: 50%;
     background: radial-gradient(circle at 30% 30%, #2a2a2a, #0f0f0f);
     position: relative;
@@ -270,18 +270,18 @@
     pointer-events: auto;
     margin: 10px 0;
 }
-.knob-body:hover {
+.big-integer-body:hover {
     transform: scale(1.02);
     box-shadow:
         inset 0 0 20px rgba(0, 0, 0, 0.8),
         0 12px 25px rgba(0, 0, 0, 0.7),
-        0 0 0 3px var(--knob-color, #0fff00);
+        0 0 0 3px var(--big-integer-color, #0fff00);
 }
-.knob-body.dragging {
+.big-integer-body.dragging {
     cursor: ns-resize !important;
     transform: scale(1.08);
 }
-.knob-body::before {
+.big-integer-body::before {
     content: '';
     position: absolute;
     top: 10px;
@@ -292,37 +292,37 @@
     background: conic-gradient(
         from 225deg,
         transparent 0deg,
-        var(--knob-color, #0fff00) calc(var(--knob-progress, 30) * 2.7deg),
-        transparent calc(var(--knob-progress, 30) * 2.7deg + 5deg)
+        var(--big-integer-color, #0fff00) calc(var(--big-integer-progress, 30) * 2.7deg),
+        transparent calc(var(--big-integer-progress, 30) * 2.7deg + 5deg)
     );
     opacity: 0.8;
 }
-.knob-indicator {
+.big-integer-indicator {
     width: 6px;
-    background: linear-gradient(180deg, var(--knob-color, #0fff00), #ffffff);
+    background: linear-gradient(180deg, var(--big-integer-color, #0fff00), #ffffff);
     position: absolute;
     transform-origin: center 55px;
     border-radius: 3px;
-    box-shadow: 0 0 10px var(--knob-color, #0fff00);
+    box-shadow: 0 0 10px var(--big-integer-color, #0fff00);
     z-index: 2;
     pointer-events: none;
 }
-.knob-center-display {
+.big-integer-center-display {
     position: absolute;
     background: radial-gradient(circle, #1a1a1a, #000000);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid var(--knob-color, #0fff00);
+    border: 2px solid var(--big-integer-color, #0fff00);
     z-index: 3;
     pointer-events: none;
 }
-.knob-value {
-    color: var(--knob-color, #0fff00);
+.big-integer-value {
+    color: var(--big-integer-color, #0fff00);
     font-weight: 700;
     text-align: center;
-    text-shadow: 0 0 8px var(--knob-color, #0fff00);
+    text-shadow: 0 0 8px var(--big-integer-color, #0fff00);
     font-family: 'Orbitron', monospace;
     user-select: none;
     pointer-events: none;
@@ -333,7 +333,7 @@
     width: 30px;
     height: 80%;
     background: rgba(255,255,255,0.1);
-    border: 1px solid var(--knob-color, #0fff00);
+    border: 1px solid var(--big-integer-color, #0fff00);
     border-radius: 15px;
     position: relative;
     margin: 10px 0;
@@ -344,12 +344,12 @@
 .slider-vertical-thumb {
     width: 40px;
     height: 20px;
-    background: var(--knob-color, #0fff00);
+    background: var(--big-integer-color, #0fff00);
     border-radius: 10px;
     position: absolute;
     left: -5px; /* center over track */
     transform: translateY(-50%);
-    box-shadow: 0 0 15px var(--knob-color, #0fff00);
+    box-shadow: 0 0 15px var(--big-integer-color, #0fff00);
     cursor: grab;
     pointer-events: auto;
     display: flex;
@@ -372,7 +372,7 @@
     height: 30px;
     width: 80%;
     background: rgba(255,255,255,0.1);
-    border: 1px solid var(--knob-color, #0fff00);
+    border: 1px solid var(--big-integer-color, #0fff00);
     border-radius: 15px;
     position: relative;
     margin: 10px 0;
@@ -383,12 +383,12 @@
 .slider-horizontal-thumb {
     width: 20px;
     height: 40px;
-    background: var(--knob-color, #0fff00);
+    background: var(--big-integer-color, #0fff00);
     border-radius: 10px;
     position: absolute;
     top: -5px; /* center over track */
     transform: translateX(-50%);
-    box-shadow: 0 0 15px var(--knob-color, #0fff00);
+    box-shadow: 0 0 15px var(--big-integer-color, #0fff00);
     cursor: grab;
     pointer-events: auto;
     display: flex;
@@ -407,70 +407,70 @@
 }
 
 /* ----- Corner buttons positioning per shape ----- */
-.shape-knob .magik-knob-int-corner-btn {
+.shape-big_integer .magik-big-integer-corner-btn {
     bottom: 0;
 }
-.shape-knob .magik-knob-int-corner-btn:first-of-type {
+.shape-big_integer .magik-big-integer-corner-btn:first-of-type {
     left: 0;
 }
-.shape-knob .magik-knob-int-corner-btn:last-of-type {
+.shape-big_integer .magik-big-integer-corner-btn:last-of-type {
     right: 0;
 }
-.shape-vertical_slider .magik-knob-int-corner-btn {
+.shape-vertical_slider .magik-big-integer-corner-btn {
     bottom: 10px;
 }
-.shape-vertical_slider .magik-knob-int-corner-btn:first-of-type {
+.shape-vertical_slider .magik-big-integer-corner-btn:first-of-type {
     left: 10px;
 }
-.shape-vertical_slider .magik-knob-int-corner-btn:last-of-type {
+.shape-vertical_slider .magik-big-integer-corner-btn:last-of-type {
     right: 10px;
 }
-.shape-horizontal_slider .magik-knob-int-corner-btn {
+.shape-horizontal_slider .magik-big-integer-corner-btn {
     bottom: 10px;
 }
-.shape-horizontal_slider .magik-knob-int-corner-btn:first-of-type {
+.shape-horizontal_slider .magik-big-integer-corner-btn:first-of-type {
     left: 10px;
 }
-.shape-horizontal_slider .magik-knob-int-corner-btn:last-of-type {
+.shape-horizontal_slider .magik-big-integer-corner-btn:last-of-type {
     right: 10px;
 }
 
 /* ----- Theme Definitions (with slider overrides) ----- */
 
 /* Theme: cyberpunk */
-.theme-cyberpunk .knob-body {
+.theme-cyberpunk .big-integer-body {
     background: radial-gradient(circle at 30% 30%, #111, #000);
-    box-shadow: 0 0 20px var(--knob-color), inset 0 0 30px rgba(0,255,255,0.2);
-    border: 2px solid var(--knob-color);
+    box-shadow: 0 0 20px var(--big-integer-color), inset 0 0 30px rgba(0,255,255,0.2);
+    border: 2px solid var(--big-integer-color);
 }
-.theme-cyberpunk .knob-indicator {
-    background: linear-gradient(180deg, #fff, var(--knob-color));
-    filter: drop-shadow(0 0 8px var(--knob-color));
+.theme-cyberpunk .big-integer-indicator {
+    background: linear-gradient(180deg, #fff, var(--big-integer-color));
+    filter: drop-shadow(0 0 8px var(--big-integer-color));
 }
-.theme-cyberpunk .knob-value {
-    text-shadow: 0 0 10px var(--knob-color);
+.theme-cyberpunk .big-integer-value {
+    text-shadow: 0 0 10px var(--big-integer-color);
     background: rgba(0,0,0,0.8);
     border-radius: 4px;
     padding: 4px;
 }
 .theme-cyberpunk .slider-vertical-track,
 .theme-cyberpunk .slider-horizontal-track {
-    border-color: var(--knob-color);
-    box-shadow: 0 0 20px var(--knob-color);
+    border-color: var(--big-integer-color);
+    box-shadow: 0 0 20px var(--big-integer-color);
 }
 .theme-cyberpunk .slider-vertical-thumb,
 .theme-cyberpunk .slider-horizontal-thumb {
-    background: var(--knob-color);
-    box-shadow: 0 0 20px var(--knob-color);
+    background: var(--big-integer-color);
+    box-shadow: 0 0 20px var(--big-integer-color);
 }
 
 /* Theme: steampunk */
-.theme-steampunk .knob-body {
+.theme-steampunk .big-integer-body {
     background: radial-gradient(circle at 30% 30%, #c0a86a, #6b4f2e);
     box-shadow: inset 0 -4px 8px rgba(0,0,0,0.6), inset 0 4px 8px #e3c184, 0 8px 12px #3a2e1e;
     border: 3px solid #8b6e4b;
 }
-.theme-steampunk .knob-body::after {
+.theme-steampunk .big-integer-body::after {
     content: "";
     position: absolute;
     top: 5px; left: 5px; right: 5px; bottom: 5px;
@@ -478,11 +478,11 @@
     background: repeating-radial-gradient(circle at 30% 30%, rgba(0,0,0,0.1), rgba(0,0,0,0.1) 2px, transparent 2px, transparent 5px);
     pointer-events: none;
 }
-.theme-steampunk .knob-indicator {
+.theme-steampunk .big-integer-indicator {
     background: linear-gradient(180deg, #b30000, #4d0000);
     box-shadow: 0 0 6px #ff5500;
 }
-.theme-steampunk .knob-value {
+.theme-steampunk .big-integer-value {
     color: #4d2e1a;
     background: #f1e0c0;
     border-radius: 50%;
@@ -501,19 +501,19 @@
 }
 
 /* Theme: minimal */
-.theme-minimal .knob-body {
+.theme-minimal .big-integer-body {
     background: #f0f0f0;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     border: 1px solid #ccc;
 }
-.theme-minimal .knob-body:hover {
+.theme-minimal .big-integer-body:hover {
     box-shadow: 0 6px 10px rgba(0,0,0,0.15);
 }
-.theme-minimal .knob-indicator {
+.theme-minimal .big-integer-indicator {
     background: #888;
     box-shadow: none;
 }
-.theme-minimal .knob-value {
+.theme-minimal .big-integer-value {
     font-family: 'Inter', sans-serif;
     color: #333;
     text-shadow: none;
@@ -531,17 +531,17 @@
 }
 
 /* Theme: glass */
-.theme-glass .knob-body {
+.theme-glass .big-integer-body {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 8px 32px rgba(0,0,0,0.2);
 }
-.theme-glass .knob-indicator {
+.theme-glass .big-integer-indicator {
     background: rgba(255,255,255,0.7);
     box-shadow: 0 0 10px rgba(255,255,255,0.5);
 }
-.theme-glass .knob-value {
+.theme-glass .big-integer-value {
     color: white;
     background: rgba(0,0,0,0.2);
     border-radius: 12px;
@@ -562,15 +562,15 @@
 }
 
 /* Theme: retro */
-.theme-retro .knob-body {
+.theme-retro .big-integer-body {
     background: radial-gradient(circle, #b87c4b, #5d3a1a);
     border: 4px solid #c9a87c;
     box-shadow: inset 0 -4px 6px #3a281a, inset 0 4px 6px #f0d3b0;
 }
-.theme-retro .knob-indicator {
+.theme-retro .big-integer-indicator {
     background: linear-gradient(180deg, #e5c687, #b57c48);
 }
-.theme-retro .knob-value {
+.theme-retro .big-integer-value {
     font-family: 'Playfair Display', serif;
     color: #4d2e1a;
 }
@@ -588,13 +588,13 @@
 }
 
 /* Theme: futuristic */
-.theme-futuristic .knob-body {
+.theme-futuristic .big-integer-body {
     background: radial-gradient(circle at 30% 30%, #1a2f3f, #0a0f14);
     border: 2px solid #00aaff;
     box-shadow: 0 0 30px #00aaff, inset 0 0 20px #004466;
     clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
 }
-.theme-futuristic .knob-indicator {
+.theme-futuristic .big-integer-indicator {
     background: none;
     border: 3px solid #00aaff;
     border-radius: 50%;
@@ -618,14 +618,14 @@
     0% { filter: hue-rotate(0deg); }
     100% { filter: hue-rotate(360deg); }
 }
-.theme-gaming .knob-body {
+.theme-gaming .big-integer-body {
     background: linear-gradient(45deg, #ff0066, #00ff99, #0066ff);
     background-size: 200% 200%;
     animation: rgbFlow 4s linear infinite;
     border: none;
     box-shadow: 0 0 30px currentColor;
 }
-.theme-gaming .knob-indicator {
+.theme-gaming .big-integer-indicator {
     background: white;
     box-shadow: 0 0 20px white;
 }
@@ -644,16 +644,16 @@
 }
 
 /* Theme: dark */
-.theme-dark .knob-body {
+.theme-dark .big-integer-body {
     background: #000;
     border: 2px solid #0ff;
     box-shadow: 0 0 15px #0ff;
 }
-.theme-dark .knob-indicator {
+.theme-dark .big-integer-indicator {
     background: #0ff;
     box-shadow: none;
 }
-.theme-dark .knob-value {
+.theme-dark .big-integer-value {
     color: #0ff;
     background: #000;
     border: 1px solid #0ff;
@@ -670,12 +670,12 @@
 }
 
 /* Theme: nature */
-.theme-nature .knob-body {
+.theme-nature .big-integer-body {
     background: radial-gradient(circle at 30% 30%, #6b8e4c, #2d4a1e);
     border: 3px solid #4c6b3b;
     box-shadow: inset 0 -6px 8px #1e2b12, inset 0 6px 8px #a3c68b;
 }
-.theme-nature .knob-indicator {
+.theme-nature .big-integer-indicator {
     background: #8b6b4c;
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     width: 12px; height: 20px;
@@ -694,18 +694,18 @@
 }
 
 /* Theme: cartoon */
-.theme-cartoon .knob-body {
+.theme-cartoon .big-integer-body {
     background: #ffcc00;
     border: 4px solid #ff6600;
     border-radius: 50%;
     box-shadow: 0 8px 0 #aa4400;
     transition: transform 0.1s;
 }
-.theme-cartoon .knob-body:active {
+.theme-cartoon .big-integer-body:active {
     transform: translateY(4px);
     box-shadow: 0 4px 0 #aa4400;
 }
-.theme-cartoon .knob-indicator {
+.theme-cartoon .big-integer-indicator {
     background: #fff;
     width: 10px; height: 10px;
     border-radius: 50%;
@@ -727,13 +727,13 @@
 }
 
 /* Theme: vaporwave */
-.theme-vaporwave .knob-body {
+.theme-vaporwave .big-integer-body {
     background: linear-gradient(135deg, #ff7eb3, #7a5fff);
     border: 2px solid #fff;
     box-shadow: 0 0 30px #ff7eb3, 0 0 60px #7a5fff;
     overflow: hidden;
 }
-.theme-vaporwave .knob-body::before {
+.theme-vaporwave .big-integer-body::before {
     content: "";
     position: absolute;
     width: 200%; height: 200%;
@@ -753,18 +753,18 @@
 }
 
 /* Theme: brutalist */
-.theme-brutalist .knob-body {
+.theme-brutalist .big-integer-body {
     background: #fff;
     border: 3px solid #000;
     box-shadow: none;
 }
-.theme-brutalist .knob-indicator {
+.theme-brutalist .big-integer-indicator {
     background: #000;
     width: 10px;
     height: 30%;
     top: 10%;
 }
-.theme-brutalist .knob-value {
+.theme-brutalist .big-integer-value {
     font-family: 'Impact', sans-serif;
     font-size: 2em;
     color: #000;
@@ -782,17 +782,17 @@
 }
 
 /* Theme: material */
-.theme-material .knob-body {
+.theme-material .big-integer-body {
     background: #fff;
     box-shadow: 0 3px 5px rgba(0,0,0,0.2), 0 6px 10px rgba(0,0,0,0.14);
     border: none;
 }
-.theme-material .knob-indicator {
+.theme-material .big-integer-indicator {
     background: #6200ee;
     width: 6px; height: 30%;
     border-radius: 4px;
 }
-.theme-material .knob-value {
+.theme-material .big-integer-value {
     font-family: 'Roboto', sans-serif;
     color: #1e1e1e;
 }
@@ -809,15 +809,15 @@
 }
 
 /* Theme: neumorphism */
-.theme-neumorphism .knob-body {
+.theme-neumorphism .big-integer-body {
     background: #e0e0e0;
     box-shadow: -8px -8px 15px #ffffff, 8px 8px 15px #a3a3a3;
     border: none;
 }
-.theme-neumorphism .knob-body:active {
+.theme-neumorphism .big-integer-body:active {
     box-shadow: inset -5px -5px 10px #ffffff, inset 5px 5px 10px #a3a3a3;
 }
-.theme-neumorphism .knob-indicator {
+.theme-neumorphism .big-integer-indicator {
     background: #b0b0b0;
     box-shadow: none;
 }
@@ -834,20 +834,20 @@
 }
 
 /* Theme: skeuomorphic */
-.theme-skeuomorphic .knob-body {
+.theme-skeuomorphic .big-integer-body {
     background: radial-gradient(circle at 30% 30%, #eee, #aaa);
     box-shadow: inset 0 -8px 12px rgba(0,0,0,0.5), inset 0 8px 12px rgba(255,255,255,0.8), 0 12px 20px #333;
     border: 2px solid #888;
     position: relative;
 }
-.theme-skeuomorphic .knob-body::before {
+.theme-skeuomorphic .big-integer-body::before {
     content: "";
     position: absolute;
     top: 5px; left: 5px; right: 5px; bottom: 5px;
     border-radius: 50%;
     background: radial-gradient(circle at 30% 30%, transparent 60%, rgba(0,0,0,0.2) 80%);
 }
-.theme-skeuomorphic .knob-indicator {
+.theme-skeuomorphic .big-integer-indicator {
     background: linear-gradient(180deg, #f00, #600);
     box-shadow: 0 2px 4px #300;
 }

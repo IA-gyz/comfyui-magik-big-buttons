@@ -6,7 +6,7 @@ Merged from [`comfyui-magik-knob`](https://github.com/IA-gyz/comfyui-magik-knob)
 
 ## Nodes
 
-- **Magik Knob Int** (`MagikKnobIntNode`) — a large integer widget rendered as a rotary knob, vertical slider, or horizontal slider, with selectable themes and shapes.
+- **Magik Big Integer** (`MagikBigIntegerNode`) — a large integer widget rendered as a rotary dial, vertical slider, or horizontal slider, with selectable themes (themes also set the node background) and shapes.
 - **Magik Toggle** (`Magik.Toggle`) — a large resizable boolean toggle with customizable on/off colors, style, and text.
 
 ## Installation

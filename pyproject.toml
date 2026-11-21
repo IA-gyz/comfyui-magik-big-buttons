@@ -1,7 +1,7 @@
 [project]
 name = "comfyui-magik-big-buttons"
 version = "1.0.0"
-description = "Magik Big Buttons - Knob and Toggle widgets for ComfyUI"
+description = "Magik Big Buttons - Big Integer and Toggle widgets for ComfyUI"
 authors = [{name = "IA-gyz"}]
 license = {text = "MIT"}
 readme = "README.md"
