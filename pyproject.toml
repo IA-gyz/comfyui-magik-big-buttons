@@ -1,7 +1,7 @@
 [project]
-name = "comfyui-magik-knob"
+name = "comfyui-magik-big-buttons"
 version = "1.0.0"
-description = 'Magik Knob'
+description = "Magik Big Buttons - Knob and Toggle widgets for ComfyUI"
 authors = [{name = "IA-gyz"}]
 license = {text = "MIT"}
 readme = "README.md"
@@ -9,8 +9,8 @@ requires-python = ">=3.10"
 dependencies = []
 
 [project.urls]
-Repository = "https://github.com/IA-gyz/comfyui-magik-knob"
+Repository = "https://github.com/IA-gyz/comfyui-magik-big-buttons"
 
 [tool.comfy]
 PublisherId = "IA-gyz"
-DisplayName = "Magik Knob"
+DisplayName = "Magik Big Buttons"
