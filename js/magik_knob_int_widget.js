@@ -127,7 +127,7 @@ const MagikKnobIntExtension = {
             settingsBtn.innerHTML = "⚙";
             header.appendChild(settingsBtn);
 
-            // MIN/MAX controls in the main panel (top-left corner)
+            // MIN/MAX controls in the main panel (full-width strip below the header)
             const minMaxContainer = document.createElement("div");
             minMaxContainer.className = "magik-knob-int-minmax";
 
@@ -149,9 +149,9 @@ const MagikKnobIntExtension = {
             minMaxContainer.appendChild(minInput);
             minMaxContainer.appendChild(maxLabel);
             minMaxContainer.appendChild(maxInput);
-            header.insertBefore(minMaxContainer, titleDisplay);
 
             wrapper.appendChild(header);
+            wrapper.appendChild(minMaxContainer);
 
             // Knob container
             const knobContainer = document.createElement("div");
@@ -488,12 +488,12 @@ const MagikKnobIntExtension = {
             this.titleDisplay.style.fontSize = (btnSize * 0.5) + 'px';
             this.titleDisplay.style.lineHeight = btnSize + 'px';
             this.minMaxContainer.style.fontSize = (btnSize * 0.3) + 'px';
-            this.minMaxContainer.style.gap = (btnSize * 0.08) + 'px';
             this.minInput.style.width = this.maxInput.style.width = (btnSize * 1.5) + 'px';
             this.minInput.style.height = this.maxInput.style.height = (btnSize * 0.7) + 'px';
             this.minInput.style.fontSize = this.maxInput.style.fontSize = (btnSize * 0.3) + 'px';
 
-            const headerHeight = btnSize + 10;
+            const minMaxHeight = btnSize * 0.7 + 8;
+            const headerHeight = btnSize + 10 + minMaxHeight;
             const availableHeight = h - headerHeight;
             const availableWidth = w;
 

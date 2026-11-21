@@ -53,11 +53,14 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
-/* MIN/MAX controls in the main panel (top-left corner of the header) */
+/* MIN/MAX controls in the main panel (full-width strip below the header) */
 .magik-knob-int-minmax {
+    width: 100%;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
-    gap: 6px;
+    justify-content: space-between;
+    padding: 4px 8px;
     pointer-events: auto;
 }
 .magik-knob-int-minmax label {
